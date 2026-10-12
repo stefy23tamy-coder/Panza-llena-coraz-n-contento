@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cinzel', serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-script: 'Caveat', cursive;
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, .font-mythic {
+    font-family: var(--font-serif);
+  }
+
+  .font-hand {
+    font-family: var(--font-script);
+  }
+}
+
+@keyframes warm-pulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.4));
+  }
+  50% {
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 24px rgba(245, 158, 11, 0.7));
+  }
+}
+
+@keyframes flame-flicker {
+  0%, 100% {
+    transform: translateY(0) scaleY(1);
+    opacity: 0.9;
+  }
+  25% {
+    transform: translateY(-2px) scaleY(1.04) rotate(-0.5deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(1px) scaleY(0.97) rotate(0.8deg);
+    opacity: 0.85;
+  }
+  75% {
+    transform: translateY(-1px) scaleY(1.02) rotate(-0.3deg);
+    opacity: 0.95;
+  }
+}
+
+.animate-warm-pulse {
+  animation: warm-pulse 3s infinite ease-in-out;
+}
+
+.animate-flame {
+  animation: flame-flicker 1.8s infinite ease-in-out;
+}
+
+/* Custom scrollbar for cozy parchment and recipe containers */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(245, 230, 211, 0.5);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(180, 83, 9, 0.35);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(180, 83, 9, 0.6);
+}
